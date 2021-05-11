@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+ 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Add your Favourite Raaga</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+ 
+<body style="background-color:grey;">
+    <div class="container my-5">
+        <h2 style="text-align: left;">Add your Favourite Raaga</h2>
+        <div class="card" style="width:40rem;">
+            <div class="card-body">
+                <div class="col-md-10">
+                    <form action="#" th:action="@{/createRaaga}" th:object="${raaga}"
+                                                                       method="post">
+                        <div class="row">
+                            <div class="form-group col-md-8">
+                                <label for="name" class="col-form-label">Raaga Name</label> 
+                                <input type="text" th:field="*{Raaganame}" class="form-control"
+                                            id="Raaganame" placeholder="Raaga Name" required/>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="name" class="col-form-label">Raaga Timing</label> 
+                                <input type="text" th:field="*{Raagatiming}" class="form-control"
+                                            id="Raagatiming" placeholder="Raaga timing" required/>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="email" class="col-form-label">Raaga Arohana</label> 
+                                <input type="text" th:field="*{Raagaarohana}" class="form-control"
+                                            id="Raagaarohana" placeholder="Raagaarohana" required />
+                            </div>
+                            
+                             <div class="form-group col-md-8">
+                                <label for="email" class="col-form-label">Raaga Avrohana</label> 
+                                <input type="text" th:field="*{Raagaavarohana}" class="form-control"
+                                            id="Raagaavarohana" placeholder="Raagaavarohana" required/>
+                            </div>
+ 
+                            <div class="col-md-6">
+                                <input type="submit" class="btn btn-primary" value=" Submit ">
+                            </div>
+ 
+                            <input type="hidden" id="id" th:field="*{id}">
+     
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+ 
+</html>
