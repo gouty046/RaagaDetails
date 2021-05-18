@@ -45,7 +45,6 @@ public class RaagaController {
 					raaga = service.getRaagaById(id.get());
 					model.addAttribute("raaga", raaga);
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 	           
@@ -75,7 +74,7 @@ public class RaagaController {
 	        return "redirect:/";
 	    }
 	 
-	 @RequestMapping("/login")
+	 	@RequestMapping("/login")
 		@ResponseBody
 		public Principal user(Principal principal)
 		{
