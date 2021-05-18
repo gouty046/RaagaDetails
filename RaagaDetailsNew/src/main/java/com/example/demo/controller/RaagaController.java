@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
 
@@ -9,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entity.Raaga;
@@ -72,6 +74,13 @@ public class RaagaController {
 	        service.createOrUpdateRaaga(raaga);
 	        return "redirect:/";
 	    }
+	 
+	 @RequestMapping("/login")
+		@ResponseBody
+		public Principal user(Principal principal)
+		{
+			return principal;
+		}
 	 
 	}
 
