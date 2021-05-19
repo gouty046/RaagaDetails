@@ -48,13 +48,11 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter
 	 * provider; }
 	 */
 	
-	
-	
 	  @Override 
 	  protected void configure(HttpSecurity http) throws Exception{
 		  http.csrf().disable().antMatcher("/**")
 		  .authorizeRequests().antMatchers("/").permitAll()
-		  .anyRequest().authenticated(); //.and() .oauth2Login();
+		  .anyRequest().authenticated().and().oauth2Login();
 	  }
 	 
 
